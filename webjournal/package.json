@@ -1,0 +1,39 @@
+{
+  "name": "webjournal",
+  "version": "1.0.0",
+  "description": "Website hosting LaVoce online journal",
+  "private": "true",
+  "author": {
+    "name": "Leonardo Mussatto",
+    "url": "https://github.com/LeonardoMussatto"
+  },
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "web newspaper",
+    "newspaper"
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "github:LeonardoMussatto/WebJournal",
+    "url": "https://github.com/LeonardoMussatto/WebJournal"
+  },
+  "main": "public/index.html",
+  "bugs": "https://github.com/LeonardoMussatto/WebJournal/issues",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "prettier --check \"src/**/*.{js,jsx}\""
+  },
+  "dependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.0.5",
+    "@snowpack/plugin-react-refresh": "^2.4.0",
+    "prettier": "^2.0.5",
+    "snowpack": "^3.0.1"
+  }
+}
