@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../Theme/theme';
-import { useLocation }  from "react-router-dom"
+import { useLocation } from 'react-router-dom';
 import Footer from '../Components/Footer';
-import Header from '../Components/Header'
+import Header from '../Components/Header';
 import Title from '../Components/Title';
-import Text from '../Components/Text'
-import TestArticle from '../Media/TestArticleDB.json'
+import Text from '../Components/Text';
+import TestArticle from '../Media/TestArticleDB.json';
 
 const Article = (props) => {
   let theme = useContext(ThemeContext);
   let location = useLocation();
-  const [Article, setArticle] = useState(TestArticle[0])
+  const [Article, setArticle] = useState(TestArticle[0]);
   let page = {
     ...theme.page,
     display: 'grid',
@@ -29,9 +29,9 @@ const Article = (props) => {
     gap: '10vh',
   };
   useEffect(() => {
-    let target = location.hash.substring(1)
-    setArticle(TestArticle.find(x => x.id == target))
-  }, [location.hash])
+    let target = location.hash.substring(1);
+    setArticle(TestArticle.find((x) => x.id == target));
+  }, [location.hash]);
   return (
     <div style={page}>
       <Header />

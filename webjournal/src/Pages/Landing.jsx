@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Card from '../Components/Card';
 import { ThemeContext } from '../Theme/theme';
-import TestArticles from '../Media/TestArticleDB.json';
+import LatestArticles from '../Media/TestArticleDB.json';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
@@ -14,9 +14,10 @@ const Landing = () => {
     gridTemplateRows:
       'min-max(min-content, 50px) auto min-max(min-content, 30vh)',
     placeContent: 'start center',
-    rowGap: '10vh',
+    rowGap: '8vh',
   };
   let main = {
+    marginLeft: '3%',
     placeSelf: 'center center',
     display: 'grid',
     width: '90%',
@@ -27,8 +28,9 @@ const Landing = () => {
     paddingTop: '5vh',
     paddingBottom: '5vh',
     display: 'grid',
-    gridTemplateRows: 'auto-fill',
-    rowGap: '5vh'
+    gridTemplateRows: 'max-content',
+    placeItems: 'start start',
+    // rowGap: '1vh'
   };
   let central = {
     width: '90%',
@@ -38,25 +40,26 @@ const Landing = () => {
     gridTemplateRows: 'auto-fill',
     borderLeft: '0.5px solid #000000',
     borderRight: '0.5px solid #000000',
-    rowGap: '5vh'
-  }
+    rowGap: '5vh',
+  };
+
   return (
     <div style={page}>
       <Header />
       <main style={main}>
         <div style={column}>
-          {TestArticles.slice(2,4).map((article) => (
-            <Card key={article.id} target={article} />
+          {LatestArticles.slice(2, 5).map((article) => (
+            <Card key={article.id} target={article} column={true} />
           ))}
         </div>
         <div style={central}>
-          {TestArticles.slice(0,2).map((article) => (
-            <Card key={article.id} target={article} />
+          {LatestArticles.slice(0, 2).map((article) => (
+            <Card key={article.id} target={article} column={false} />
           ))}
         </div>
         <div style={column}>
-          {TestArticles.slice(4,6).map((article) => (
-            <Card key={article.id} target={article} />
+          {LatestArticles.slice(5, 8).map((article) => (
+            <Card key={article.id} target={article} column={true} />
           ))}
         </div>
       </main>

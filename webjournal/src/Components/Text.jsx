@@ -6,13 +6,9 @@ const Article = (props) => {
   let body = {
     ...theme.text.body,
     width: '80%',
-    whiteSpace: 'pre-line'
+    whiteSpace: 'pre-line',
   };
-  return (
-    <article style={body}>
-      {props.target}
-    </article>
-  );
+  return <article style={body}>{props.target}</article>;
 };
 
 export default Article;
