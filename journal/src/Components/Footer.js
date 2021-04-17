@@ -1,45 +1,45 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../Utilities/theme";
-import { ReactComponent as Facebook } from "../Media/Social/facebook.svg";
-import { ReactComponent as Instagram } from "../Media/Social/instagram.svg";
-import { ReactComponent as Whatsapp } from "../Media/Social/whatsapp.svg";
-import { ReactComponent as Gmail } from "../Media/Social/gmail.svg";
-import { Link } from "react-router-dom";
+import React, { useContext } from 'react';
+import { ThemeContext } from '../Utilities/theme';
+import { ReactComponent as Facebook } from '../Media/Social/facebook.svg';
+import { ReactComponent as Instagram } from '../Media/Social/instagram.svg';
+import { ReactComponent as Whatsapp } from '../Media/Social/whatsapp.svg';
+import { ReactComponent as Gmail } from '../Media/Social/gmail.svg';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   let theme = useContext(ThemeContext);
   let footer = {
-    placeSelf: "center center",
-    width: "95%",
-    display: "grid",
-    girdTemplateRows: "10% 90%",
+    placeSelf: 'center center',
+    width: '95%',
+    display: 'grid',
+    girdTemplateRows: '10% 90%',
     gridTemplateColumns:
-      "minmax(min-content, 0.3fr) minmax(min-content, 1.1fr) minmax(min-content, 0.6fr)",
+      'minmax(min-content, 0.3fr) minmax(min-content, 1.1fr) minmax(min-content, 0.6fr)',
     gridTemplateAreas: `
         "line line line"
         "logo links social"`,
-    placeItems: "center center",
-    rowGap: "5vh",
-    paddingTop: "10vh",
-    paddingBottom: "5vh",
+    placeItems: 'center center',
+    rowGap: '5vh',
+    paddingTop: '10vh',
+    paddingBottom: '5vh',
   };
   let flex = {
-    display: "flex",
-    justifyItems: "space around",
-    placeItems: "center center",
-    gap: "5vw",
+    display: 'flex',
+    justifyItems: 'space around',
+    placeItems: 'center center',
+    gap: '5vw',
   };
   let text = {
     ...theme.text.title.h1,
-    placeSelf: "center center",
-    textDecoration: "none",
-    color: theme.page.color
+    placeSelf: 'center center',
+    textDecoration: 'none',
+    color: theme.page.color,
   };
   let hr = {
-    gridArea: "line",
-    width: "100%",
-    borderTop: "0.5px solid #000000",
-    placeSelf: "start center",
+    gridArea: 'line',
+    width: '100%',
+    borderTop: '0.5px solid #000000',
+    placeSelf: 'start center',
   };
   return (
     <footer style={footer}>

@@ -1,21 +1,21 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../Utilities/theme";
+import React, { useContext } from 'react';
+import { ThemeContext } from '../Utilities/theme';
 
 const Title = (props) => {
   let theme = useContext(ThemeContext);
   let title = {
-    display: "grid",
+    display: 'grid',
     gridTemplateColumns: '0.5fr 1fr 0.5fr',
     gridTemplateRows: 'auto-fill',
     placeItems: 'center center',
-    gap: "2vh",
-    width: '80vw'
+    gap: '2vh',
+    width: '80vw',
   };
   let main = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: "2vh",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '2vh',
   };
   return (
     <section style={title}>

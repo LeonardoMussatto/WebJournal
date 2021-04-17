@@ -1,33 +1,33 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { ThemeContext } from "../Utilities/theme";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { ThemeContext } from '../Utilities/theme';
 
 const Card = (props) => {
   let theme = useContext(ThemeContext);
   let article = props.target.head;
   let card = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: props.column ? "flex-start" : "center",
-    textDecoration: "none",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: props.column ? 'flex-start' : 'center',
+    textDecoration: 'none',
     color: theme.page.color,
   };
   let main = props.column
     ? {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        paddingLeft: "5%",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        paddingLeft: '5%',
       }
     : {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       };
   let hr = {
-    width: props.column ? "100% " : "90%",
-    marginTop: "5vh",
-    marginLeft: props.column ? "0%" : "auto",
+    width: props.column ? '100% ' : '90%',
+    marginTop: '5vh',
+    marginLeft: props.column ? '0%' : 'auto',
   };
 
   return (

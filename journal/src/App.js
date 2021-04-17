@@ -1,7 +1,7 @@
-import { Switch, Route } from "react-router-dom";
-import { ThemeContext, theme } from "./Utilities/theme";
-import Article from "./Pages/Article";
-import Landing from "./Pages/Landing";
+import { Switch, Route } from 'react-router-dom';
+import { ThemeContext, theme } from './Utilities/theme';
+import Article from './Pages/Article';
+import Landing from './Pages/Landing';
 
 function App() {
   return (
