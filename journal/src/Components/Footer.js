@@ -14,7 +14,7 @@ const Footer = () => {
     display: "grid",
     girdTemplateRows: "10% 90%",
     gridTemplateColumns:
-      "minmax(min-content, 0.3fr) minmax(min-content, 1fr) minmax(min-content, 0.7fr)",
+      "minmax(min-content, 0.3fr) minmax(min-content, 1.1fr) minmax(min-content, 0.6fr)",
     gridTemplateAreas: `
         "line line line"
         "logo links social"`,
@@ -32,6 +32,8 @@ const Footer = () => {
   let text = {
     ...theme.text.title.h1,
     placeSelf: "center center",
+    textDecoration: "none",
+    color: theme.page.color
   };
   let hr = {
     gridArea: "line",
@@ -51,10 +53,10 @@ const Footer = () => {
         <p style={{ ...theme.text.title.h3 }}>About</p>
       </div>
       <div style={flex}>
-        <Whatsapp width="9%" />
-        <Instagram width="9%" />
-        <Facebook width="9%" />
-        <Gmail width="9%" />
+        <Whatsapp width="6%" />
+        <Instagram width="6%" />
+        <Facebook width="6%" />
+        <Gmail width="6%" />
       </div>
     </footer>
   );

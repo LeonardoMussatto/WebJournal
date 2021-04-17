@@ -14,7 +14,7 @@ const Article = () => {
   let page = {
     ...theme.page,
     display: "grid",
-    gridTemplateColumns: "100vw",
+    gridTemplateColumns: "90vw",
     gridTemplateRows:
       "min-max(min-content, 50px) auto min-max(min-content, 30vh)",
     placeContent: "start center",
