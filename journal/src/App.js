@@ -1,10 +1,9 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { ThemeContext, theme } from './Theme/theme';
-import Landing from './Pages/Landing';
-import Article from './Pages/Article';
+import { Switch, Route } from "react-router-dom";
+import { ThemeContext, theme } from "./Utilities/theme";
+import Article from "./Pages/Article";
+import Landing from "./Pages/Landing";
 
-const App = () => {
+function App() {
   return (
     <Switch>
       <Route path="/article">
@@ -19,6 +18,6 @@ const App = () => {
       </Route>
     </Switch>
   );
-};
+}
 
 export default App;

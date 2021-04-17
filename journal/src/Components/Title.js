@@ -1,19 +1,19 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../Theme/theme';
+import React, { useContext } from "react";
+import { ThemeContext } from "../Utilities/theme";
 
 const Title = (props) => {
   let theme = useContext(ThemeContext);
   let title = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyItems: 'center',
-    gap: '2vh',
+    display: "flex",
+    alignItems: "center",
+    justifyItems: "center",
+    gap: "2vh",
   };
   let main = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '2vh',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "2vh",
   };
   return (
     <section style={title}>
