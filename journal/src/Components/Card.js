@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../Theme/theme';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../Utilities/theme';
 
 const Card = (props) => {
   let theme = useContext(ThemeContext);
@@ -29,15 +29,16 @@ const Card = (props) => {
     marginTop: '5vh',
     marginLeft: props.column ? '0%' : 'auto',
   };
+
   return (
     <Link to={`/article#${props.target.id}`} style={card}>
       <div style={main}>
-        {article.img && <img src={article.src} alt={article.alt} width="60%" />}
+        {props.img && article.img && <img src={article.src} alt={article.alt} width="60%" />}
         <h1
           style={
             props.column
               ? { ...theme.text.title.h2 }
-              : { ...theme.text.title.h1 }
+              : { ...theme.text.title.h1, padding: '1% 10%', textAlign: 'center' }
           }
         >
           {article.title}
@@ -55,7 +56,7 @@ const Card = (props) => {
           {article.date} - {article.author}
         </p>
       </div>
-      <hr style={hr} />
+      {!props.remLine && <hr style={hr} />}
     </Link>
   );
 };

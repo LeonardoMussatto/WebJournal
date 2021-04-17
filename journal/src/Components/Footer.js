@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../Theme/theme';
-import Facebook from '../Media/Social/facebook.svgr.svg';
-import Instagram from '../Media/Social/instagram.svgr.svg';
-import Whatsapp from '../Media/Social/whatsapp.svgr.svg';
-import Gmail from '../Media/Social/gmail.svgr.svg';
+import { ThemeContext } from '../Utilities/theme';
+import { ReactComponent as Facebook } from '../Media/Social/facebook.svg';
+import { ReactComponent as Instagram } from '../Media/Social/instagram.svg';
+import { ReactComponent as Whatsapp } from '../Media/Social/whatsapp.svg';
+import { ReactComponent as Gmail } from '../Media/Social/gmail.svg';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   let theme = useContext(ThemeContext);
@@ -13,7 +14,7 @@ const Footer = () => {
     display: 'grid',
     girdTemplateRows: '10% 90%',
     gridTemplateColumns:
-      'minmax(min-content, 0.3fr) minmax(min-content, 1fr) minmax(min-content, 0.7fr)',
+      'minmax(min-content, 0.3fr) minmax(min-content, 1.1fr) minmax(min-content, 0.6fr)',
     gridTemplateAreas: `
         "line line line"
         "logo links social"`,
@@ -31,6 +32,8 @@ const Footer = () => {
   let text = {
     ...theme.text.title.h1,
     placeSelf: 'center center',
+    textDecoration: 'none',
+    color: theme.page.color,
   };
   let hr = {
     gridArea: 'line',
@@ -41,17 +44,19 @@ const Footer = () => {
   return (
     <footer style={footer}>
       <hr style={hr} />
-      <p style={text}>La Voce</p>
+      <Link to="/" style={text}>
+        La Voce
+      </Link>
       <div style={flex}>
         <p style={{ ...theme.text.title.h3 }}>Categories</p>
         <p style={{ ...theme.text.title.h3 }}>Authors</p>
         <p style={{ ...theme.text.title.h3 }}>About</p>
       </div>
       <div style={flex}>
-        <Whatsapp width="9%" />
-        <Instagram width="9%" />
-        <Facebook width="9%" />
-        <Gmail width="9%" />
+        <Whatsapp width="6%" />
+        <Instagram width="6%" />
+        <Facebook width="6%" />
+        <Gmail width="6%" />
       </div>
     </footer>
   );

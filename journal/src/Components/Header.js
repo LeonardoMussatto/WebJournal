@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../Theme/theme';
+import { ThemeContext } from '../Utilities/theme';
 
 const Header = () => {
   let theme = useContext(ThemeContext);
@@ -28,6 +28,7 @@ const Header = () => {
     borderTop: '0.5px solid #000000',
     placeSelf: 'center start',
   };
+
   return (
     <Link to="/" style={header}>
       <hr style={hrSx} />

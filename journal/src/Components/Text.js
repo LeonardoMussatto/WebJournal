@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../Theme/theme';
+import { ThemeContext } from '../Utilities/theme';
 
-const Article = (props) => {
+const Text = (props) => {
   let theme = useContext(ThemeContext);
   let body = {
     ...theme.text.body,
@@ -11,4 +11,4 @@ const Article = (props) => {
   return <article style={body}>{props.target}</article>;
 };
 
-export default Article;
+export default Text;

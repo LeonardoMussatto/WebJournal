@@ -1,20 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from '../Theme/theme';
+import React, { useContext, useState, useEffect } from 'react';
+import { ThemeContext } from '../Utilities/theme';
 import { useLocation } from 'react-router-dom';
+import Text from '../Components/Text';
+import Title from '../Components/Title';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
-import Title from '../Components/Title';
-import Text from '../Components/Text';
-import TestArticle from '../Media/TestArticleDB.json';
+import TestArticles from '../Media/TestArticleDB.json';
 
-const Article = (props) => {
+const Article = () => {
   let theme = useContext(ThemeContext);
   let location = useLocation();
-  const [Article, setArticle] = useState(TestArticle[0]);
+  const [Article, setArticle] = useState(TestArticles[0]);
   let page = {
     ...theme.page,
     display: 'grid',
-    gridTemplateColumns: '100vw',
+    gridTemplateColumns: '90vw',
     gridTemplateRows:
       'min-max(min-content, 50px) auto min-max(min-content, 30vh)',
     placeContent: 'start center',
@@ -30,7 +30,7 @@ const Article = (props) => {
   };
   useEffect(() => {
     let target = location.hash.substring(1);
-    setArticle(TestArticle.find((x) => x.id == target));
+    setArticle(TestArticles.find((x) => x.id === target));
   }, [location.hash]);
   return (
     <div style={page}>
