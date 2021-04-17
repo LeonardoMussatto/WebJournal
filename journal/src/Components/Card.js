@@ -33,12 +33,12 @@ const Card = (props) => {
   return (
     <Link to={`/article#${props.target.id}`} style={card}>
       <div style={main}>
-        {article.img && <img src={article.src} alt={article.alt} width="60%" />}
+        {props.img && article.img && <img src={article.src} alt={article.alt} width="60%" />}
         <h1
           style={
             props.column
               ? { ...theme.text.title.h2 }
-              : { ...theme.text.title.h1 }
+              : { ...theme.text.title.h1, padding: '1% 10%', textAlign: 'center' }
           }
         >
           {article.title}
@@ -56,7 +56,7 @@ const Card = (props) => {
           {article.date} - {article.author}
         </p>
       </div>
-      <hr style={hr} />
+      {!props.remLine && <hr style={hr} />}
     </Link>
   );
 };
