@@ -43,8 +43,28 @@ const Preview = (props) => {
     justifyContent: 'flex-start',
     rowGap: '2%',
   };
-  
-  if (props.articles.length === 1) {
+
+  if (props.articles.length >= 10) {
+    return (
+      <>
+        <div style={columnFull}>
+          {props.articles.slice(2, 6).map((article) => (
+            <Card key={article.id} target={article} column={true} />
+          ))}
+        </div>
+        <div style={central}>
+          {props.articles.slice(0, 2).map((article) => (
+            <Card key={article.id} target={article} column={false} img={true} />
+          ))}
+        </div>
+        <div style={columnFull}>
+          {props.articles.slice(6, 10).map((article) => (
+            <Card key={article.id} target={article} column={true} />
+          ))}
+        </div>
+      </>
+    );
+  } else if (props.articles.length === 1) {
     return (
       <>
         <div style={columnFull}></div>
@@ -259,26 +279,6 @@ const Preview = (props) => {
         </div>
         <div style={columnPartial}>
           {props.articles.slice(6, 9).map((article) => (
-            <Card key={article.id} target={article} column={true} />
-          ))}
-        </div>
-      </>
-    );
-  } else if (props.articles.length >= 10) {
-    return (
-      <>
-        <div style={columnFull}>
-          {props.articles.slice(2, 6).map((article) => (
-            <Card key={article.id} target={article} column={true} />
-          ))}
-        </div>
-        <div style={central}>
-          {props.articles.slice(0, 2).map((article) => (
-            <Card key={article.id} target={article} column={false} img={true} />
-          ))}
-        </div>
-        <div style={columnFull}>
-          {props.articles.slice(6, 10).map((article) => (
             <Card key={article.id} target={article} column={true} />
           ))}
         </div>
