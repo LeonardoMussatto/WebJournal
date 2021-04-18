@@ -22,7 +22,7 @@ jobs:
         run: npm install
       
       - name: Build React App
-        run: npm build
+        run: npm run-script build
         
       - name: Deploy Firebase Hosting Preview
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -30,7 +30,7 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_LA_VOCE___WEB_JOURNAL }}'
           projectId: la-voce---web-journal
-          expires: 30
+          expires: 15d
           channelId: predeploy
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
