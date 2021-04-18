@@ -1,16 +1,17 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from '../Utilities/theme';
 import { useLocation } from 'react-router-dom';
+import { useGetArticle } from '../Utilities/useGetArticle';
 import Text from '../Components/Text';
 import Title from '../Components/Title';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
-import TestArticles from '../Media/TestArticleDB.json';
 
 const Article = () => {
   let theme = useContext(ThemeContext);
   let location = useLocation();
-  const [Article, setArticle] = useState(TestArticles[0]);
+  let target = location.hash.substring(1);
+  const targetArticle = useGetArticle(target);
   let page = {
     ...theme.page,
     display: 'grid',
@@ -28,17 +29,19 @@ const Article = () => {
     alignItems: 'center',
     gap: '10vh',
   };
-  useEffect(() => {
-    let target = location.hash.substring(1);
-    setArticle(TestArticles.find((x) => x.id === target));
-  }, [location.hash]);
   return (
     <div style={page}>
       <Header />
-      <main style={main}>
-        <Title target={Article.head} />
-        <Text target={Article.body} />
-      </main>
+      {targetArticle ? (
+        <main style={main}>
+          <Title target={targetArticle[target - 1].head} />
+          <Text target={targetArticle[target - 1].body} />
+        </main>
+      ) : (
+        <h3 style={{ ...theme.text.title.h3 }}>
+          Oops ... Houston, we've had a problem here.
+        </h3>
+      )}
       <Footer />
     </div>
   );
