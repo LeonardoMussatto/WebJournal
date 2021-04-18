@@ -6,6 +6,11 @@ name: Preview Firebase Hosting on merge with preDeploy
  push:
     branches:
       - preDeploy
+      
+defaults:
+  run:
+    working-directory: journal
+    
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
