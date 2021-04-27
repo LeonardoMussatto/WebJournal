@@ -6,9 +6,11 @@ name: Preview Firebase Hosting on merge with preDeploy
  push:
     branches:
       - preDeploy
+      - main
  pull_request:
     branches:
       - preDeploy
+      - main
 
 defaults:
   run:
