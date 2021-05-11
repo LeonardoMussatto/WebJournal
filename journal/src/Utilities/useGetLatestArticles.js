@@ -6,7 +6,7 @@ export const useGetLatestArticles = () => {
   const database = firebase.firestore();
   React.useEffect(() => {
     database
-      .collection('articles')
+      .collection('test')
       .get()
       .then((snapshot) => {
         const arr = [];
