@@ -9,18 +9,13 @@ export const useGetLatestArticles = () => {
       .collection('articles')
       .get()
       .then((snapshot) => {
-        if (snapshot.exists) {
-          const arr = [];
-          snapshot.docs.map((doc) => arr.push({ id: doc.id, ...doc.data() }));
-          setArticles(arr);
-        } else {
-          console.log('No such document!');
-          setArticles([]);
-        }
+        const arr = [];
+        snapshot.docs.map((doc) => arr.push({ id: doc.id, ...doc.data() }));
+        setArticles(arr);
       })
       .catch((error) => {
         console.log('Error getting document:', error);
-        setArticles([]);
+        setArticles([{ id: "error" }]);
       });
   }, [database]);
   return [Articles];

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../Utilities/theme';
-import { useGetLatestArticles } from '../Utilities/useGetLatestArticles';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import Preview from '../Components/Preview';
+import { useGetLatestArticles } from '../Utilities/useGetLatestArticles';
+// import Preview from '../Components/Preview';
 
 const Landing = () => {
   let theme = useContext(ThemeContext);
@@ -29,13 +29,15 @@ const Landing = () => {
     <div style={page}>
       <Header />
       <main style={main}>
-        {Articles && Articles.length > 0 ? (
+        length: {Articles.length}
+        {Articles.map((art) => (<p key={art.id}>id: {art.id}</p>))}
+        {/* {Articles && Articles.length > 0 ? (
           <Preview articles={Articles} />
         ) : (
           <h3 style={{ ...theme.text.title.h3 }}>
             Oops ... Houston, we've had a problem here
           </h3>
-        )}
+        )} */}
       </main>
       <Footer />
     </div>
