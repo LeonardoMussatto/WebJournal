@@ -22,6 +22,16 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
 
+let db = firebase.firestore();
+db.collection('test').doc('test1')
+  .set({
+    name: 'Tokyo',
+    country: 'Japan',
+  })
+  .catch((error) => {
+    console.error('Error adding document: ', error);
+  });
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

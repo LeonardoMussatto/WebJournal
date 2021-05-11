@@ -6,6 +6,7 @@ module.exports = function override(config, env){
         'process.env': {
           REACT_APP_apiKey: JSON.stringify(process.env.REACT_APP_apiKey),
           REACT_APP_authDomain: JSON.stringify(process.env.REACT_APP_authDomain),
+          REACT_APP_databaseURL: JSON.stringify(process.env.REACT_APP_databaseURL),
           REACT_APP_projectId: JSON.stringify(process.env.REACT_APP_projectId),
           REACT_APP_storageBucket: JSON.stringify(process.env.REACT_APP_storageBucket),
           REACT_APP_messagingSenderId: JSON.stringify(process.env.REACT_APP_messagingSenderId),
