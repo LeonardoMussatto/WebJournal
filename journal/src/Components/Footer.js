@@ -35,6 +35,11 @@ const Footer = () => {
     textDecoration: 'none',
     color: theme.page.color,
   };
+  let link = {
+    ...theme.text.title.h3,
+    textDecoration: 'none',
+    color: theme.page.color,
+  };
   let hr = {
     gridArea: 'line',
     width: '100%',
@@ -48,9 +53,11 @@ const Footer = () => {
         La Voce
       </Link>
       <div style={flex}>
-        <p style={{ ...theme.text.title.h3 }}>Categories</p>
-        <p style={{ ...theme.text.title.h3 }}>Authors</p>
-        <p style={{ ...theme.text.title.h3 }}>About</p>
+        <p style={link}>Categories</p>
+        <Link to="/Authors" style={link}>
+          Authors
+        </Link>
+        <p style={link}>About</p>
       </div>
       <div style={flex}>
         <Whatsapp width="6%" />

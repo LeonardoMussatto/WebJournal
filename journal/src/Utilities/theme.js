@@ -53,6 +53,13 @@ export const theme = {
     backgroundColor: '#FBFBF9',
     boxSizing: 'border-box',
     scrollbarWidth: 'thin',
+    minHeight: '100vh',
+    display: 'grid',
+    gridTemplateColumns: '90vw',
+    gridTemplateRows:
+      'min-max(min-content, 50px) auto min-max(min-content, 30vh)',
+    placeContent: 'start center',
+    rowGap: '10vh',
   },
 };
 

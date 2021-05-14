@@ -11,15 +11,8 @@ const Article = () => {
   let theme = useContext(ThemeContext);
   let location = useLocation();
   const [Article, setArticle] = useState(TestArticles[0]);
-  let page = {
-    ...theme.page,
-    display: 'grid',
-    gridTemplateColumns: '90vw',
-    gridTemplateRows:
-      'min-max(min-content, 50px) auto min-max(min-content, 30vh)',
-    placeContent: 'start center',
-    rowGap: '10vh',
-  };
+
+  let page = { ...theme.page };
   let main = {
     width: '70%',
     placeSelf: 'start center',
@@ -28,10 +21,12 @@ const Article = () => {
     alignItems: 'center',
     gap: '10vh',
   };
+
   useEffect(() => {
     let target = location.hash.substring(1);
     setArticle(TestArticles.find((x) => x.id === target));
   }, [location.hash]);
+
   return (
     <div style={page}>
       <Header />

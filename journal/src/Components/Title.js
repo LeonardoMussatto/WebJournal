@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../Utilities/theme';
+import { Link } from 'react-router-dom';
 
 const Title = (props) => {
   let theme = useContext(ThemeContext);
@@ -24,7 +25,16 @@ const Title = (props) => {
         <img src={props.target.src} alt={props.target.alt} width="80%" />
         <h1 style={{ ...theme.text.title.h1 }}>{props.target.title}</h1>
       </div>
-      <p style={{ ...theme.text.title.h3 }}>{props.target.author}</p>
+      <Link
+        to={`/author#${props.target.author.replace(/\s+/g, '')}`}
+        style={{
+          ...theme.text.title.h3,
+          textDecoration: 'none',
+          color: theme.page.color,
+        }}
+      >
+        {props.target.author}
+      </Link>
     </section>
   );
 };
